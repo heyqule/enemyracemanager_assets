@@ -1,0 +1,12 @@
+{
+  "name": "enemyracemanager_assets",
+  "version": "1.0.0",
+  "date": "2022-08-15",
+  "title": "Enemy Race Manager Asset Pack",
+  "author": "heyqule",
+  "description": "This is an asset pack for Enemy Race Manager. It includes assets which apply to all races",
+  "factorio_version": "1.1",
+  "dependencies": [
+    "base >= 1.1.0"
+  ]
+}
