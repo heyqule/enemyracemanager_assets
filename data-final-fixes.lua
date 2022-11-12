@@ -11,3 +11,31 @@ if DEBUG_MODE then
     --data.raw["projectile"]["battlecruiser-yamato-projectile"]["action"]["action_delivery"]["target_effects"][1]['entity_name'] = 'erm-ball-explosion-blood-2'
 
 end
+
+
+local sound_pack = {
+    {
+        filename = "__enemyracemanager_assets__/sound/base_under_attack.ogg",
+        volume = 0.5
+    }
+}
+
+local muted_sound = {
+    filename = "__enemyracemanager_assets__/sound/base_under_attack.ogg",
+    volume = 0.0
+}
+
+for i = 1, settings.startup['erm-asset-base-destroyed-alert-chance'].value, 1 do
+    table.insert(sound_pack, muted_sound)
+end
+
+data.raw["utility-sounds"]["default"]['alert_destroyed'] =  {
+    category = 'alert',
+    variations = sound_pack,
+    aggregation = {
+        max_count = 1,
+        remove = true,
+        progress_threshold = 1,
+        count_already_playing = true
+    },
+}

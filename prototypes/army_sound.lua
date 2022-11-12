@@ -4,6 +4,22 @@
 --- DateTime: 11/8/2022 11:12 PM
 ---
 
+local force_sound_pack = {
+    {
+        filename = "__enemyracemanager_assets__/sound/force_under_attack.ogg",
+        volume = 0.5
+    }
+}
+
+local force_muted_sound = {
+    filename = "__enemyracemanager_assets__/sound/force_under_attack.ogg",
+    volume = 0.0
+}
+
+for i = 1, settings.startup['erm-asset-army-destroyed-alert-chance'].value, 1 do
+    table.insert(force_sound_pack, force_muted_sound)
+end
+
 data:extend({
     {
         type = "sound",
@@ -44,31 +60,16 @@ data:extend({
         },
         volume = 0.5
     },
-});
-
-local sound_pack = {
     {
-        filename = "__enemyracemanager_assets__/sound/base_under_attack.ogg",
-        volume = 0.5
+        type = "sound",
+        name = "erm-army-force-under-attack-by-chance",
+        category = 'alert',
+        variations = force_sound_pack,
+        aggregation = {
+            max_count = 1,
+            remove = true,
+            progress_threshold = 1,
+            count_already_playing = true
+        },
     }
-}
-
-local muted_sound = {
-    filename = "__enemyracemanager_assets__/sound/base_under_attack.ogg",
-    volume = 0.0
-}
-
-for i = 1, settings.startup['erm-asset-destroyed-alert-chance'].value, 1 do
-    table.insert(sound_pack, muted_sound)
-end
-
-data.raw["utility-sounds"]["default"]['alert_destroyed'] =  {
-    category = 'alert',
-    variations = sound_pack,
-    aggregation = {
-        max_count = 1,
-        remove = true,
-        progress_threshold = 1,
-        count_already_playing = true
-    },
-}
+});
