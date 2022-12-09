@@ -7,6 +7,14 @@
 
 local SharedFunctions = {}
 
+function SharedFunctions.process_tint(entity, data, layer)
+    if data['tint'] then
+        entity['animations'][layer]['tint'] = data['tint']
+        entity['animations'][layer]['blend'] = 'additive'
+    end
+    return entity
+end
+
 function SharedFunctions.process_glow(entity, data, layer)
     if data['draw_as_glow'] then
         entity['animations'][layer]['draw_as_glow'] = true
