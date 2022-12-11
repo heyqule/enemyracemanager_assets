@@ -4,5 +4,5 @@
 --- DateTime: 1/1/2021 6:08 PM
 ---
 
-DEBUG_MODE = true
+DEBUG_MODE = false
 TINT_MODE = false
