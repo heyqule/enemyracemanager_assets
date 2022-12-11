@@ -18,7 +18,7 @@ data:extend {
         description = "erm-asset-base-destroyed-alert-chance",
         setting_type = "startup",
         default_value = 3,
-        allowed_values = {0,1,2,3,4,9},
+        allowed_values = {0,1,2,3,4,5,9},
         order = "enemyracemanager-asset-002",
     },
     {
@@ -27,7 +27,7 @@ data:extend {
         description = "erm-asset-army-destroyed-alert-chance",
         setting_type = "startup",
         default_value = 2,
-        allowed_values = {0,1,2,3,4,9},
+        allowed_values = {0,1,2,3,4,5,9},
         order = "enemyracemanager-asset-002",
     },
 }
