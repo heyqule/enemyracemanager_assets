@@ -1,4 +1,4 @@
-This packages add various effects for [Enemy Race Manager](https://mods.factorio.com/mod/enemyracemanager)
+This packages add various effects and sounds for [Enemy Race Manager](https://mods.factorio.com/mod/enemyracemanager)
 
 Assets Credits:
 ------------------------

@@ -29,13 +29,15 @@ for i = 1, settings.startup['erm-asset-base-destroyed-alert-chance'].value, 1 do
     table.insert(sound_pack, muted_sound)
 end
 
-data.raw["utility-sounds"]["default"]['alert_destroyed'] =  {
-    category = 'alert',
-    variations = sound_pack,
-    aggregation = {
-        max_count = 1,
-        remove = true,
-        progress_threshold = 1,
-        count_already_playing = true
-    },
-}
+if settings.startup['erm-asset-base-destroyed-alert-replace'].value then
+    data.raw["utility-sounds"]["default"]['alert_destroyed'] =  {
+        category = 'alert',
+        variations = sound_pack,
+        aggregation = {
+            max_count = 1,
+            remove = true,
+            progress_threshold = 1,
+            count_already_playing = true
+        },
+    }
+end

@@ -13,13 +13,21 @@ data:extend {
         order = "enemyracemanager-asset-001",
     },
     {
+        type = "bool-setting",
+        name = "erm-asset-base-destroyed-alert-replace",
+        description = "erm-asset-base-destroyed-alert-replace",
+        setting_type = "startup",
+        default_value = true,
+        order = "enemyracemanager-asset-002",
+    },
+    {
         type = "int-setting",
         name = "erm-asset-base-destroyed-alert-chance",
         description = "erm-asset-base-destroyed-alert-chance",
         setting_type = "startup",
         default_value = 3,
         allowed_values = {0,1,2,3,4,5,9},
-        order = "enemyracemanager-asset-002",
+        order = "enemyracemanager-asset-003",
     },
     {
         type = "int-setting",
@@ -28,6 +36,6 @@ data:extend {
         setting_type = "startup",
         default_value = 2,
         allowed_values = {0,1,2,3,4,5,9},
-        order = "enemyracemanager-asset-002",
+        order = "enemyracemanager-asset-004",
     },
 }
