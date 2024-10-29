@@ -3,12 +3,12 @@
 --- Created by heyqule.
 --- DateTime: 10/23/2021 12:53 PM
 ---
-require('global')
+require("global")
 if DEBUG_MODE then
 
-    --data.raw["projectile"]["wraith-rocket"]["action"]["action_delivery"]["target_effects"][1]['entity_name'] = 'erm-small-explosion-blood-0-5'
+    --data.raw["projectile"]["wraith-rocket"]["action"]["action_delivery"]["target_effects"][1]["entity_name"] = "erm-small-explosion-blood-0-5"
     --
-    --data.raw["projectile"]["battlecruiser-yamato-projectile"]["action"]["action_delivery"]["target_effects"][1]['entity_name'] = 'erm-ball-explosion-blood-2'
+    --data.raw["projectile"]["battlecruiser-yamato-projectile"]["action"]["action_delivery"]["target_effects"][1]["entity_name"] = "erm-ball-explosion-blood-2"
 
 end
 
@@ -25,13 +25,13 @@ local muted_sound = {
     volume = 0.0
 }
 
-for i = 1, settings.startup['erm-asset-base-destroyed-alert-chance'].value, 1 do
+for i = 1, settings.startup["erm-asset-base-destroyed-alert-chance"].value, 1 do
     table.insert(sound_pack, muted_sound)
 end
 
-if settings.startup['erm-asset-base-destroyed-alert-replace'].value then
-    data.raw["utility-sounds"]["default"]['alert_destroyed'] =  {
-        category = 'alert',
+if settings.startup["erm-asset-base-destroyed-alert-replace"].value then
+    data.raw["utility-sounds"]["default"]["alert_destroyed"] =  {
+        category = "alert",
         variations = sound_pack,
         aggregation = {
             max_count = 1,

@@ -16,7 +16,7 @@ local force_muted_sound = {
     volume = 0.0
 }
 
-for i = 1, settings.startup['erm-asset-army-destroyed-alert-chance'].value, 1 do
+for i = 1, settings.startup["erm-asset-army-destroyed-alert-chance"].value, 1 do
     table.insert(force_sound_pack, force_muted_sound)
 end
 
@@ -50,7 +50,7 @@ data:extend({
     {
         type = "sound",
         name = "erm-army-force-under-attack",
-        category = 'alert',
+        category = "alert",
         filename = "__enemyracemanager_assets__/sound/force_under_attack.ogg",
         aggregation = {
             max_count = 1,
@@ -63,7 +63,7 @@ data:extend({
     {
         type = "sound",
         name = "erm-army-force-under-attack-by-chance",
-        category = 'alert',
+        category = "alert",
         variations = force_sound_pack,
         aggregation = {
             max_count = 1,

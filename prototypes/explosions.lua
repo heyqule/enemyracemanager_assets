@@ -4,32 +4,32 @@
 --- DateTime: 8/16/2022 12:15 AM
 ---
 
-local ERMTints = require('tint')
-local SharedFunctions = require('prototypes/shared')
-local colorlist = require('__stdlib__/stdlib/utils/defines/color_list')
+local ERMTints = require("tint")
+local SharedFunctions = require("prototypes/shared")
+local colorlist = require("__stdlib__/stdlib/utils/defines/color_list")
 
 --- 1 = 3 radius
 --- 2 = 5 radius
 local ball_explosion = function(data)
-    data['scale'] = data['scale'] or 1
+    data["scale"] = data["scale"] or 1
     local explosion = {
         type = "explosion",
-        name = "erm-ball-explosion-"..data['type']..'-'..SharedFunctions.convert_scale(data['scale']),
+        name = "erm-ball-explosion-"..data["type"].."-"..SharedFunctions.convert_scale(data["scale"]),
         flags = { "not-on-map" },
-        subgroup = 'explosions',
-        order = "erm-ball-explosion-"..data['type']..'-'..SharedFunctions.convert_scale(data['scale']),
+        subgroup = "explosions",
+        order = "erm-ball-explosion-"..data["type"].."-"..SharedFunctions.convert_scale(data["scale"]),
         render_layer = "explosion",
         --rotate = true,
         --correct_rotation = true,
         animations = {
             {
-                filename = "__enemyracemanager_assets__/graphics/explosions/ball_"..data['type']..".png",
+                filename = "__enemyracemanager_assets__/graphics/explosions/ball_"..data["type"]..".png",
                 width = 192,
                 height = 192,
                 line_length = 5,
                 frame_count = 25,
                 animation_speed = 0.4,
-                scale = data['scale']
+                scale = data["scale"]
             }
         }
     }
@@ -41,23 +41,23 @@ end
 --- 1 = 2 radius
 --- 2 = 3 radius
 local small_explosion = function(data)
-    data['scale'] = data['scale'] or 1
+    data["scale"] = data["scale"] or 1
     local explosion = {
         type = "explosion",
-        name = "erm-small-explosion-"..data['type']..'-'..SharedFunctions.convert_scale(data['scale']),
-        subgroup = 'explosions',
-        order = "erm-small-explosion-"..data['type']..'-'..SharedFunctions.convert_scale(data['scale']),
+        name = "erm-small-explosion-"..data["type"].."-"..SharedFunctions.convert_scale(data["scale"]),
+        subgroup = "explosions",
+        order = "erm-small-explosion-"..data["type"].."-"..SharedFunctions.convert_scale(data["scale"]),
         render_layer = "explosion",
         flags = { "not-on-map" },
         animations = {
             {
-                filename = "__enemyracemanager_assets__/graphics/explosions/small_explosion_"..data['type']..".png",
+                filename = "__enemyracemanager_assets__/graphics/explosions/small_explosion_"..data["type"]..".png",
                 width = 192,
                 height = 192,
                 line_length = 5,
                 frame_count = 27,
                 animation_speed = 0.5,
-                scale = data['scale']
+                scale = data["scale"]
             }
         }
     }
@@ -70,22 +70,22 @@ end
 --- 1.5 = 6 radius
 --- 2 = 8 radius
 local circular_effects = function(data)
-    data['scale'] = data['scale'] or 1
+    data["scale"] = data["scale"] or 1
     local explosion = {
         type = "explosion",
-        name = "erm-circular-effect-"..data['effect_name']..'-'..SharedFunctions.convert_scale(data['scale']),
-        subgroup = 'explosions',
-        order = "erm-circular-effect-"..data['effect_name']..'-'..SharedFunctions.convert_scale(data['scale']),
+        name = "erm-circular-effect-"..data["effect_name"].."-"..SharedFunctions.convert_scale(data["scale"]),
+        subgroup = "explosions",
+        order = "erm-circular-effect-"..data["effect_name"].."-"..SharedFunctions.convert_scale(data["scale"]),
         flags = { "not-on-map" },
         animations = {
             {
-                filename = "__enemyracemanager_assets__/graphics/explosions/circular_effects/"..data['file_name']..".png",
-                width = data['width'],
-                height = data['height'],
-                line_length = data['line_number'],
-                frame_count = data['frame_count'],
-                animation_speed = data['speed'],
-                scale = data['scale']
+                filename = "__enemyracemanager_assets__/graphics/explosions/circular_effects/"..data["file_name"]..".png",
+                width = data["width"],
+                height = data["height"],
+                line_length = data["line_number"],
+                frame_count = data["frame_count"],
+                animation_speed = data["speed"],
+                scale = data["scale"]
             }
         }
     }
@@ -98,12 +98,12 @@ end
 for _, scale in pairs({1,2}) do
     data:extend({
         ball_explosion({
-            type='blood',
+            type="blood",
             draw_as_glow=false,
             scale=scale
         }),
         ball_explosion({
-            type='fire',
+            type="fire",
             draw_as_glow=true,
             lighting_color={r=255,g=143,b=62},
             lighting_intensity=0.75,
@@ -116,27 +116,27 @@ end
 for _, scale in pairs({1, 2}) do
     data:extend({
         small_explosion({
-            type='cold',
+            type="cold",
             draw_as_glow=false,
             scale=scale
         }),
         small_explosion({
-            type='acid',
+            type="acid",
             draw_as_glow=false,
             scale=scale
         }),
         small_explosion({
-            type='fire',
+            type="fire",
             draw_as_glow=true,
             scale=scale
         }),
         small_explosion({
-            type='blood',
+            type="blood",
             draw_as_glow=false,
             scale=scale
         }),
         small_explosion({
-            type='xray',
+            type="xray",
             draw_as_glow=true,
             scale=scale
         }),
@@ -146,8 +146,8 @@ end
 for _, scale in pairs({1, 1.5, 2}) do
     data:extend({
         circular_effects({
-            file_name='fire',
-            effect_name='fire',
+            file_name="fire",
+            effect_name="fire",
             width=320,
             height=319,
             line_number=9,
@@ -157,8 +157,8 @@ for _, scale in pairs({1, 1.5, 2}) do
             draw_as_glow=true
         }),
         circular_effects({
-            file_name='cold',
-            effect_name='cold',
+            file_name="cold",
+            effect_name="cold",
             width=320,
             height=315,
             line_number=9,
@@ -167,8 +167,8 @@ for _, scale in pairs({1, 1.5, 2}) do
             scale=scale
         }),
         circular_effects({
-            file_name='electric',
-            effect_name='electric',
+            file_name="electric",
+            effect_name="electric",
             width=320,
             height=328,
             line_number=9,
@@ -178,8 +178,8 @@ for _, scale in pairs({1, 1.5, 2}) do
             draw_as_glow=true
         }),
         circular_effects({
-            file_name='cloud-greyscale',
-            effect_name='cloud-green',
+            file_name="cloud-greyscale",
+            effect_name="cloud-green",
             width=320,
             height=319,
             line_number=9,
@@ -189,8 +189,8 @@ for _, scale in pairs({1, 1.5, 2}) do
             tint=colorlist.greenyellow,
         }),
         circular_effects({
-            file_name='cloud-greyscale',
-            effect_name='cloud-orange',
+            file_name="cloud-greyscale",
+            effect_name="cloud-orange",
             width=320,
             height=319,
             line_number=9,
@@ -200,8 +200,8 @@ for _, scale in pairs({1, 1.5, 2}) do
             tint=colorlist.sandybrown,
         }),
         circular_effects({
-            file_name='fluid-greyscale',
-            effect_name='fluid-blue',
+            file_name="fluid-greyscale",
+            effect_name="fluid-blue",
             width=320,
             height=319,
             line_number=9,
@@ -211,8 +211,8 @@ for _, scale in pairs({1, 1.5, 2}) do
             tint=colorlist.blueviolet
         }),
         circular_effects({
-            file_name='fluid-greyscale',
-            effect_name='fluid-green',
+            file_name="fluid-greyscale",
+            effect_name="fluid-green",
             width=320,
             height=319,
             line_number=9,

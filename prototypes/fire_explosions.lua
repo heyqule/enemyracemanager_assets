@@ -4,34 +4,34 @@
 --- DateTime: 9/5/2022 9:20 PM
 ---
 
-local SharedFunctions = require('prototypes/shared')
+local SharedFunctions = require("prototypes/shared")
 
 local fire_explosion = function(data)
-    data['scale'] = data['scale'] or 1
+    data["scale"] = data["scale"] or 1
     local explosion = {
         type = "explosion",
-        name = "erm-fire-explosion-"..data['type'].."_"..data['subtype'].."-"..SharedFunctions.convert_scale(data['scale']),
+        name = "erm-fire-explosion-"..data["type"].."_"..data["subtype"].."-"..SharedFunctions.convert_scale(data["scale"]),
         flags = { "not-on-map" },
-        subgroup = 'explosions',
-        order = "erm-fire-explosion"..data['type'].."_"..data['subtype'].."-"..SharedFunctions.convert_scale(data['scale']),
+        subgroup = "explosions",
+        order = "erm-fire-explosion"..data["type"].."_"..data["subtype"].."-"..SharedFunctions.convert_scale(data["scale"]),
         render_layer = "explosion",
         --rotate = true,
         --correct_rotation = true,
     }
-    explosion['animations'] = {}
-    for key, animation in pairs(data['animations']) do
-        explosion['animations'][key] = {
-            filename = "__enemyracemanager_assets__/graphics/fire_explosions/"..data['type'].."_"..data['subtype'].."_v"..key..".png",
-            width = animation['width'],
-            height = animation['height'],
-            line_length = animation['line_number'],
-            frame_count = animation['frame_count'],
-            animation_speed = animation['speed'],
-            scale = animation['scale']
+    explosion["animations"] = {}
+    for key, animation in pairs(data["animations"]) do
+        explosion["animations"][key] = {
+            filename = "__enemyracemanager_assets__/graphics/fire_explosions/"..data["type"].."_"..data["subtype"].."_v"..key..".png",
+            width = animation["width"],
+            height = animation["height"],
+            line_length = animation["line_number"],
+            frame_count = animation["frame_count"],
+            animation_speed = animation["speed"],
+            scale = animation["scale"]
         }
         explosion = SharedFunctions.process_glow(explosion, data, key)
-        if animation['shift'] then
-            explosion['animations'][key]['shift'] = animation['shift']
+        if animation["shift"] then
+            explosion["animations"][key]["shift"] = animation["shift"]
         end
     end
 
@@ -41,8 +41,8 @@ end
 
 data:extend({
     fire_explosion({
-        type='air',
-        subtype='normal',
+        type="air",
+        subtype="normal",
         draw_as_glow = true,
         animations = {
             {
@@ -74,8 +74,8 @@ data:extend({
     }),
 
     fire_explosion({
-        type='air',
-        subtype='large',
+        type="air",
+        subtype="large",
         draw_as_glow = true,
         animations = {
             {
@@ -109,8 +109,8 @@ data:extend({
     }),
 
     fire_explosion({
-        type='ground',
-        subtype='normal',
+        type="ground",
+        subtype="normal",
         draw_as_glow = true,
         animations = {
             {
