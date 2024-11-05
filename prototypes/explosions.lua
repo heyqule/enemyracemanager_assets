@@ -4,9 +4,8 @@
 --- DateTime: 8/16/2022 12:15 AM
 ---
 
-local ERMTints = require("tint")
 local SharedFunctions = require("prototypes/shared")
-local colorlist = require("__stdlib__/stdlib/utils/defines/color_list")
+local colorlist = require("__erm_libs__/stdlib/color_list")
 
 --- 1 = 3 radius
 --- 2 = 5 radius
