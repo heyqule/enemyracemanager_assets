@@ -36,7 +36,6 @@ if settings.startup["erm-asset-base-destroyed-alert-replace"].value then
         aggregation = {
             max_count = 1,
             remove = true,
-            progress_threshold = 1,
             count_already_playing = true
         },
     }

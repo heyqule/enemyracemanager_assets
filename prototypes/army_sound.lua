@@ -42,7 +42,6 @@ data:extend({
         aggregation = {
             max_count = 1,
             remove = true,
-            progress_threshold = 1,
             count_already_playing = true
         },
         volume = 0.5
@@ -55,7 +54,6 @@ data:extend({
         aggregation = {
             max_count = 1,
             remove = true,
-            progress_threshold = 1,
             count_already_playing = true
         },
         volume = 0.5
@@ -68,7 +66,6 @@ data:extend({
         aggregation = {
             max_count = 1,
             remove = true,
-            progress_threshold = 1,
             count_already_playing = true
         },
     }
