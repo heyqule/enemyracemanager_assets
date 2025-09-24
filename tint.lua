@@ -30,7 +30,7 @@ function ERM_UnitTint.tint_archon_light()
 end
 
 function ERM_UnitTint.tint_darkarchon_light()
-    return { r = 255, g = 80, b = 0, a = 1 }
+    return { r = 255, g = 80, b = 0, a = 255 }
 end
 
 function ERM_UnitTint.tint_cold()
@@ -59,10 +59,6 @@ end
 
 function ERM_UnitTint.tint_red_crimson()
     return { r = 220, g = 20, b = 60, a = 255 }
-end
-
-function ERM_UnitTint.tint_army_color()
-    return { r = 69, g = 225, b = 27, a = 255 }
 end
 
 function ERM_UnitTint.tint_army_color()
