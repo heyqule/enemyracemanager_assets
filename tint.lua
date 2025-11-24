@@ -61,6 +61,10 @@ function ERM_UnitTint.tint_red_crimson()
     return { r = 220, g = 20, b = 60, a = 255 }
 end
 
+function ERM_UnitTint.tint_red_blood()
+    return { r = 136, g = 8, b = 8, a = 255 }
+end
+
 function ERM_UnitTint.tint_army_color()
     return { r = 69, g = 225, b = 27, a = 255 }
 end
@@ -80,6 +84,11 @@ end
 function ERM_UnitTint.mask_tint(layer, color)
     layer["tint"] = color
     layer["apply_runtime_tint"] = false
+end
+
+function ERM_UnitTint.apply_runtime_tint(layer, tint)
+    layer["apply_runtime_tint"] = tint or true
+    layer["tint"] = nil
 end
 
 return ERM_UnitTint

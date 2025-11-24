@@ -4,14 +4,6 @@
 --- DateTime: 10/23/2021 12:53 PM
 ---
 require("global")
-if DEBUG_MODE then
-
-    --data.raw["projectile"]["wraith-rocket"]["action"]["action_delivery"]["target_effects"][1]["entity_name"] = "erm-small-explosion-blood-0-5"
-    --
-    --data.raw["projectile"]["battlecruiser-yamato-projectile"]["action"]["action_delivery"]["target_effects"][1]["entity_name"] = "erm-ball-explosion-blood-2"
-
-end
-
 
 local sound_pack = {
     {
@@ -21,7 +13,7 @@ local sound_pack = {
 }
 
 local muted_sound = {
-    filename = "__enemyracemanager_assets__/sound/base_under_attack.ogg",
+    filename = "__enemyracemanager_assets__/sound/empty-sound.ogg",
     volume = 0.0
 }
 

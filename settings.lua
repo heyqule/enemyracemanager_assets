@@ -25,8 +25,8 @@ data:extend {
         name = "erm-asset-base-destroyed-alert-chance",
         description = "erm-asset-base-destroyed-alert-chance",
         setting_type = "startup",
-        default_value = 3,
-        allowed_values = {0,1,2,3,4,5,9},
+        default_value = 5,
+        allowed_values = {0,1,2,3,4,5,8,10},
         order = "enemyracemanager-asset-003",
     },
     {
@@ -34,8 +34,8 @@ data:extend {
         name = "erm-asset-army-destroyed-alert-chance",
         description = "erm-asset-army-destroyed-alert-chance",
         setting_type = "startup",
-        default_value = 3,
-        allowed_values = {0,1,2,3,4,5,9},
+        default_value = 5,
+        allowed_values = {0,1,2,3,4,5,8,10},
         order = "enemyracemanager-asset-004",
     },
 }

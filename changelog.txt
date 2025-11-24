@@ -1,4 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.2
+Date: 2025-11-24
+
+  Features:
+    - Added Air radar graphic
+    - Moved human sound class from red army to here.
+    
+  Changes:
+    - Added some air raid alarms and EAS alarms to programmable speaker.
+    - Added air raid radar icon for map view.
+    - Changed default_value for the frequency of army warning from 3 to 5.
+    - Changed the frequency options of army warning from (...5,9) to (...5,8,10)
+    - Added apply_runtime_tint function to tint class
+    - Added tint_red_blood function to tint class    
+
+---------------------------------------------------------------------------------------------------
 Version: 2.0.1
 Date: 2025-09-24
 

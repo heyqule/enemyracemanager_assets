@@ -12,11 +12,11 @@ local force_sound_pack = {
 }
 
 local force_muted_sound = {
-    filename = "__enemyracemanager_assets__/sound/force_under_attack.ogg",
+    filename = "__enemyracemanager_assets__/sound/empty-sound.ogg",
     volume = 0.0
 }
 
-for i = 1, settings.startup["erm-asset-army-destroyed-alert-chance"].value, 1 do
+for i = 1, settings.startup["erm-asset-army-destroyed-alert-chance"].value * 2, 1 do
     table.insert(force_sound_pack, force_muted_sound)
 end
 
@@ -29,7 +29,6 @@ data:extend({
         aggregation = {
             max_count = 1,
             remove = true,
-            progress_threshold = 1,
             count_already_playing = true
         },
         volume = 0.5
@@ -69,4 +68,39 @@ data:extend({
             count_already_playing = true
         },
     }
-});
+})
+
+local programmable_speaker = data.raw['programmable-speaker']['programmable-speaker']
+
+for index, instrument in pairs(programmable_speaker.instruments) do
+    if instrument.name == "alarms" then
+        table.insert(programmable_speaker.instruments[index].notes, { 
+            name="air-raid-siren",  
+            sound = { filename = "__enemyracemanager_assets__/sound/air-raid-siren.ogg", preload = false }}
+        )
+        table.insert(programmable_speaker.instruments[index].notes, {
+            name="air-raid-siren-2",
+            sound = { filename = "__enemyracemanager_assets__/sound/siren-alarm.ogg", preload = false }}
+        )
+        table.insert(programmable_speaker.instruments[index].notes, {
+            name="germany-eas",
+            sound = { filename = "__enemyracemanager_assets__/sound/germany-eas-alarm.ogg", preload = false }}
+        )
+        table.insert(programmable_speaker.instruments[index].notes, {
+            name="japan-eas",
+            sound = { filename = "__enemyracemanager_assets__/sound/japan-eas-alarm.ogg", preload = false }}
+        )
+        table.insert(programmable_speaker.instruments[index].notes, {
+            name="japan-j-alert",
+            sound = { filename = "__enemyracemanager_assets__/sound/japan-eas-alarm-j-alert.ogg", preload = false }}
+        )
+        table.insert(programmable_speaker.instruments[index].notes, {
+            name="finland-eas",
+            sound = { filename = "__enemyracemanager_assets__/sound/finland-eas-alarm.ogg", preload = false }}
+        )
+        table.insert(programmable_speaker.instruments[index].notes, {
+            name="denmark-eas",
+            sound = { filename = "__enemyracemanager_assets__/sound/denmark-eas-alarm.ogg", preload = false }}
+        )
+    end
+end
