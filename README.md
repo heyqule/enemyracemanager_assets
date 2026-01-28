@@ -6,6 +6,7 @@ Effects bought from
 - https://graphicriver.net/item/explosion-sprites-pack/21761224
 
 Terran Announcer Sound from Starcraft 1, Blizzard
+PSI Emitter Graphic from Starcraft 1, Blizzard
 
 Air raid alarms:
 - https://pixabay.com/sound-effects/air-raid-siren-sound-effect-241383/
